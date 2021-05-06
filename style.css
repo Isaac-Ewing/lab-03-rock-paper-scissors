@@ -11,11 +11,24 @@
     background-image: url='https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/1200px-Rock-paper-scissors.svg.png';
 }
 
+#game-result {
+    font-size: 1.5rem;
+}
+
 .hidden-stuff {
     opacity: 0;
     margin-left: 46%;
+    margin-top: 20px;
 }
 
 #vs {
-    margin-left: 49%;
+    margin-left: 47%;
+}
+
+#total-resets {
+    font-size: 1.5rem;
+}
+
+#bottom-text {
+    text-align: center;
 }

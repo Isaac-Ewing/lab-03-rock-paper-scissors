@@ -30,10 +30,13 @@ submitButton.addEventListener('click', () => {
         picOne.src="http://1000awesomethings.com/wp-content/uploads/2008/08/scissors.jpg";
         userThrow = userGuess[2].value;
     }
+
     hidden[0].style.opacity = 1;
     hidden[1].style.opacity = 1;
     hidden[2].style.opacity = 1;
+
     let currentResult = didUserWin(userThrow, compThrow);
+
     if (compThrow === 1) {
         picTwo.src="http://1000awesomethings.com/wp-content/uploads/2008/08/rock.jpg";
         compThrow = "rock"
@@ -46,6 +49,7 @@ submitButton.addEventListener('click', () => {
         picTwo.src="http://1000awesomethings.com/wp-content/uploads/2008/08/scissors.jpg";
         compThrow = "scissors"
     }
+    
     if  (currentResult === 1) {
         wins++;
         gameResult.textContent = `You win! Your opponent threw ${compThrow}. Wins: ${wins} Losses: ${losses} Draws: ${draws}`
