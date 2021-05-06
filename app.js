@@ -17,7 +17,6 @@ let draws = 0;
 let resets = 0;
 
 submitButton.addEventListener('click', () => {
-    let compThrow = getRandomThrow();
     if (userGuess[0].checked) {
         userThrow = userGuess[0].value;
         picOne.src="http://1000awesomethings.com/wp-content/uploads/2008/08/rock.jpg";
@@ -30,13 +29,10 @@ submitButton.addEventListener('click', () => {
         picOne.src="http://1000awesomethings.com/wp-content/uploads/2008/08/scissors.jpg";
         userThrow = userGuess[2].value;
     }
-
-    hidden[0].style.opacity = 1;
-    hidden[1].style.opacity = 1;
-    hidden[2].style.opacity = 1;
-
+    
+    let compThrow = getRandomThrow();
     let currentResult = didUserWin(userThrow, compThrow);
-
+    
     if (compThrow === 1) {
         picTwo.src="http://1000awesomethings.com/wp-content/uploads/2008/08/rock.jpg";
         compThrow = "rock"
@@ -50,6 +46,10 @@ submitButton.addEventListener('click', () => {
         compThrow = "scissors"
     }
     
+    hidden[0].style.opacity = 1;
+    hidden[1].style.opacity = 1;
+    hidden[2].style.opacity = 1;
+
     if  (currentResult === 1) {
         wins++;
         gameResult.textContent = `You win! Your opponent threw ${compThrow}. Wins: ${wins} Losses: ${losses} Draws: ${draws}`
@@ -74,4 +74,4 @@ resetButton.addEventListener('click', () => {
     hidden[0].style.opacity = 0;
     hidden[1].style.opacity = 0;
     hidden[2].style.opacity = 0;
-})
+});
