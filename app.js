@@ -33,32 +33,29 @@ submitButton.addEventListener('click', () => {
     let compThrow = getRandomThrow();
     let currentResult = didUserWin(userThrow, compThrow);
     
-    if (compThrow === 1) {
+    if (compThrow === 'rock') {
         picTwo.src="http://1000awesomethings.com/wp-content/uploads/2008/08/rock.jpg";
-        compThrow = "rock"
     }
-    if (compThrow === 2){
+    if (compThrow === 'paper'){
         picTwo.src="http://1000awesomethings.com/wp-content/uploads/2008/08/paper.jpg";
-        compThrow = "paper"
     }
-    if (compThrow === 3) {
+    if (compThrow === 'scissors') {
         picTwo.src="http://1000awesomethings.com/wp-content/uploads/2008/08/scissors.jpg";
-        compThrow = "scissors"
     }
     
     hidden[0].style.opacity = 1;
     hidden[1].style.opacity = 1;
     hidden[2].style.opacity = 1;
 
-    if  (currentResult === 1) {
+    if  (currentResult === 'win') {
         wins++;
         gameResult.textContent = `You win! Your opponent threw ${compThrow}. Wins: ${wins} Losses: ${losses} Draws: ${draws}`
     }
-    if  (currentResult === 0) {
+    if  (currentResult === 'draw') {
         draws++;
         gameResult.textContent = `You tied. Your opponent threw ${compThrow}. Wins: ${wins} Losses: ${losses} Draws: ${draws}`
     }
-    if  (currentResult === -1) {
+    if  (currentResult === 'lose') {
         losses++;
         gameResult.textContent = `You lose :( Your opponent threw ${compThrow}. Wins: ${wins} Losses: ${losses} Draws: ${draws}`
     }
